@@ -45,9 +45,28 @@ li a:hover:not(.active, .logo) {
 }
 
 .logo:hover {
-  background: hsl(210, 100%, 46%);
+  background: #0075eb;
 }
 
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #181818;
+  color: white;
+  text-align: center;
+  /* padding: 5px */
+}
+
+/* #footertext {
+  padding: 5px;
+} */
+
 #content {
-  margin-top: 50px;
+  background: #0e0e0e;
+  margin-top: 28px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  /* height: 100vh; */
 }
