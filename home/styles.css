@@ -5,7 +5,11 @@
   font-family: "Hack", monospace;
 }
 
-header {
+html, body {
+  height: 100%;
+}
+
+.header {
   position: fixed;
   background: #222222;
   width: 100%;
@@ -15,13 +19,13 @@ header {
   align-items: center;
 }
 
-header a {
+.header a {
   transition-duration: 0.4s;
   text-decoration: none;
   color: white;
 }
 
-header a:hover {
+.header a:hover:not(.header-logo) {
   background: #181818;
 }
 
@@ -42,9 +46,8 @@ header a:hover {
   align-items: center;
 }
 
-main {
+.container {
   background: #0e0e0e;
-  min-height: 100vh;
   padding-top: 48px;
   display: flex;
   justify-content: center;
@@ -63,4 +66,31 @@ main {
 
 .box p {
   color: gray;
+}
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -2rem;
+}
+
+.footer, .push {
+  height: 2rem;
+}
+
+.footer {
+  background: #222222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer a {
+  text-decoration: none;
+  color: dodgerblue;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }
