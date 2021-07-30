@@ -1,72 +1,66 @@
-body {
-  background: #0e0e0e;
-  margin: 0;
-  font-family: "Hack";
-}
-
-h1 {
-  color: white;
-}
-
-ul {
-  list-style-type: none;
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  background-color: #222222;
+  font-family: "Hack", monospace;
+}
+
+header {
   position: fixed;
-  top: 0;
+  background: #222222;
   width: 100%;
+  height: 3rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
 }
 
-li {
-  float: left;
-}
-
-li a {
+header a {
   transition-duration: 0.4s;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
   text-decoration: none;
-}
-
-li a:hover:not(.active, .logo) {
-  background-color: #181818;
-}
-
-.active {
-  background-color: #0e0e0e;
-}
-
-.logo {
-  background: dodgerblue;
-}
-
-.logo:hover {
-  background: #0075eb;
-}
-
-.footer {
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #181818;
   color: white;
-  text-align: center;
-  /* padding: 5px */
 }
 
-/* #footertext {
-  padding: 5px;
-} */
+header a:hover {
+  background: #181818;
+}
 
-#content {
+.header-logo {
+  background: #1e90ff;
+}
+
+.header-logo:hover {
+  background: #1c7ddf;
+}
+
+.header-item {
+  text-align: center;
+  height: 100%;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
   background: #0e0e0e;
-  margin-top: 28px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  /* height: 100vh; */
+  min-height: 100vh;
+  padding-top: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  background: #181818;
+  padding: 10px;
+  text-align: center;
+}
+
+.box h1 {
+  color: white;
+}
+
+.box p {
+  color: gray;
 }
