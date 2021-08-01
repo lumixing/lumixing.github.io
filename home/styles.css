@@ -29,12 +29,20 @@ html, body {
   background: #181818;
 }
 
+.header-right {
+  height: 100%;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .header-logo {
   background: #1e90ff;
 }
 
 .header-logo:hover {
-  background: #1c7ddf;
+  background: #165ea7;
 }
 
 .header-item {
@@ -44,6 +52,10 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.active {
+  background: #0e0e0e;
 }
 
 .container {
