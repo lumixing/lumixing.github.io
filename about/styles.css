@@ -69,15 +69,31 @@ html, body {
 .box {
   background: #181818;
   padding: 20px 60px;
-  text-align: center;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
 }
 
-.box h1 {
+.title {
+  display: flex;
+  align-items: flex-end;
+}
+
+.title h1 {
   color: white;
+  margin-right: 0.5rem;
 }
 
-.box p {
+.title span {
   color: gray;
+}
+
+.box-content {
+  margin-top: 0.5rem;
+  color: gray;
+  align-self: flex-start;
 }
 
 .wrapper {
