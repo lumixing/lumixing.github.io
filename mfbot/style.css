@@ -1,0 +1,64 @@
+:root {
+	--dark-1: hsl(0, 0%, 5%);
+	--dark-2: hsl(0, 0%, 7%);
+	--dark-3: hsl(0, 0%, 9%);
+}
+
+* {
+	/* border: magenta 1px solid; */
+}
+
+body {
+	background-color: var(--dark-2);
+	height: 100vh;
+}
+
+.header {
+	background-color: var(--dark-1);
+	padding: .5rem;
+}
+
+.logo {
+	font-size: 32px;
+	font-weight: 700;
+	margin: 0 1rem;
+}
+
+.logo-semi {
+	color: hsl(0, 0%, 60%);
+}
+
+.logo-text {
+	color: hsl(0, 0%, 80%);
+}
+
+.header-link:not(:first-child), .link {
+	font-size: 20px;
+	padding: .5rem;
+	transition: .1s;
+}
+
+.header-link:hover, .link:hover {
+	background-color: var(--dark-3);
+}
+
+.header-link:active, .link:active {
+	background-color: var(--dark-2);
+}
+
+.container {
+	height: calc(100% - 56px);
+}
+
+.big-text {
+	font-size: 128px;
+}
+
+.slogan {
+	font-size: 20px;
+	margin-bottom: .5rem;
+}
+
+.links {
+	gap: .5rem;
+}

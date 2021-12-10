@@ -1,0 +1,17 @@
+* { font-family: "Roboto", sans-serif; }
+body { margin: 0; padding: 0; box-sizing: border-box; }
+a { text-decoration: none; }
+.inline { display: inline; }
+.block { display: block; }
+.inblock { display: inline-block; }
+.flex { display: flex; }
+.inflex { display: inline-flex }
+.flex-c { display: flex; justify-content: center; align-items: center; }
+.flex-x { display: flex; justify-content: center; }
+.flex-y { display: flex; align-items: center; }
+.flex-col { flex-direction: column; }
+.round { border-radius: 5px; }
+.white-t { color: white; }
+.float-r { float: right; }
+.float-l { float: left; }
+.self-x-r { margin-left: auto; }
