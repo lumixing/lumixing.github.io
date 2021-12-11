@@ -1,0 +1,76 @@
+:root {
+  --dark-1: hsl(0, 0%, 5%);
+  --dark-2: hsl(0, 0%, 7%);
+  --dark-3: hsl(0, 0%, 9%);
+}
+
+body {
+  background-color: var(--dark-2);
+  height: 100vh;
+}
+
+.header {
+  background-color: var(--dark-1);
+  padding: 0.5rem;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 1rem;
+}
+
+.logo-semi {
+  color: hsl(0, 0%, 60%);
+}
+
+.logo-text {
+  color: hsl(0, 0%, 80%);
+}
+
+.active-link {
+  background-color: var(--dark-2);
+}
+
+.header-link:not(:first-child),
+.link {
+  font-size: 20px;
+  padding: 0.5rem;
+  transition: 0.1s;
+}
+
+.header-link:hover,
+.link:hover {
+  background-color: var(--dark-3);
+}
+
+.header-link:active,
+.link:active {
+  background-color: var(--dark-2);
+}
+
+.link {
+  padding: 0.3rem;
+}
+
+.container {
+  height: calc(100% - 56px);
+  gap: 0.3rem;
+}
+
+.big-text {
+  font-size: 64px;
+}
+
+.slogan {
+  font-size: 20px;
+  margin-bottom: 0.5rem;
+}
+
+.links {
+  gap: 0.5rem;
+}
+
+.item {
+  font-size: 20px;
+}
