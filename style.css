@@ -1,0 +1,92 @@
+:root {
+  --dark-1: hsl(0, 0%, 3%);
+  --dark-2: hsl(0, 0%, 5%);
+  --dark-3: hsl(0, 0%, 7%);
+}
+
+body {
+  background-color: var(--dark-2);
+  height: 100vh;
+}
+
+.blue {
+  background: linear-gradient(180deg, #2b32b2 0%, #1488cc 100%);
+  padding: 0 1rem;
+  justify-content: space-around;
+}
+
+.logo {
+  font-size: 150px;
+  font-weight: 900;
+  transition: 0.5s;
+  cursor: default;
+}
+
+.logo:nth-child(2) {
+  color: rgb(255, 255, 255, 80%);
+}
+
+.logo:nth-child(3) {
+  color: rgb(255, 255, 255, 60%);
+}
+
+.logo:nth-child(4) {
+  color: rgb(255, 255, 255, 40%);
+}
+
+.logo:nth-child(5) {
+  color: rgb(255, 255, 255, 20%);
+}
+.logo:hover {
+  color: white;
+}
+
+.main {
+  width: 100%;
+  padding: 1rem;
+}
+
+.h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.name,
+.desc {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.desc {
+  color: hsl(0, 0%, 70%);
+}
+
+.desc::before {
+  content: "·";
+  margin: 0 5px;
+}
+
+a {
+  border-bottom: white 2px solid;
+  color: white;
+  transition: 0.2s;
+  padding: 0 3px;
+}
+
+a:hover {
+  background-color: white;
+  color: black;
+  padding: 0 10px;
+}
+
+.disabled:hover {
+  color: white;
+  background-color: #f81145;
+  border-bottom: #f81145 2px solid;
+  cursor: not-allowed;
+}

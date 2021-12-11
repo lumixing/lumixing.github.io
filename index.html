@@ -1,114 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>home | lumix</title>
-
-    <!-- import roboto font -->
-    <link href="http://fonts.cdnfonts.com/css/roboto" rel="stylesheet" />
-    <link rel="icon" type="image/png" href="favicon.png" />
+    <title>lumix</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
+    <link rel="stylesheet" href="pre.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body>
-    <!-- 36.4044997,25.3971387 -->
-    <div class="container">
-      <h1>home</h1>
-      <div class="links">
-        <span class="link"><a href="perlin">perlin</a></span>
-        <span>&middot;</span>
-        <span class="link"><a href="skinviewer">skin viewer</a></span>
-        <span>&middot;</span>
-        <span class="link"><a href="https://i.nuuls.com/zMOkf.wav">??????</a></span>
-      </div>
-      <div class="last-links">
-        <span class="link"><a href="https://github.com/lumixing/">github</a></span>
-        <span>&middot;</span>
-        <span class="link"><a href="https://twitter.com/lumixing/">twitter</a></span>
+  <body class="flex">
+    <div class="blue flex flex-col align-c">
+      <span class="logo white-t">lumix</span>
+      <span class="logo white-t">lumix</span>
+      <span class="logo white-t">lumix</span>
+      <span class="logo white-t">lumix</span>
+      <span class="logo white-t">lumix</span>
+    </div>
+    <div class="main flex align-c">
+      <div class="projects flex flex-col">
+        <span class="h1 white-t">projects</span>
+
+        <div class="item flex">
+          <a href="mfbot">
+            <span class="name">mfbot</span>
+          </a>
+          <span class="desc white-t">the best discord bot</span>
+        </div>
+
+        <div class="item flex">
+          <a href="perlin">
+            <span class="name">perlin</span>
+          </a>
+          <span class="desc white-t">perlin noise generator</span>
+        </div>
+
+        <div class="item flex">
+          <a class="disabled">
+            <span class="name">devbox</span>
+          </a>
+          <span class="desc white-t">a toolbox for developers</span>
+        </div>
       </div>
     </div>
-    <span class="secret">b25lIHR3byBzaXg=</span>
   </body>
 </html>
-
-<style>
-  :root {
-    --backblack: #111111;
-    --backblack2: #1a1a1a;
-    --backblack3: #0a0a0a;
-    --textwhite: #d6d6d6;
-    --test: #ff00ff;
-  }
-
-  ::selection {
-    background: var(--textwhite);
-    color: var(--backblack);
-  }
-
-  body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-
-    background: var(--backblack);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-family: "Roboto";
-    color: var(--textwhite);
-  }
-
-  .container {
-    padding: 1rem;
-
-    background: var(--backblack2);
-
-    box-shadow: 0 0 10px var(--backblack3);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .links {
-    margin-bottom: 0.5rem;
-  }
-
-  .last-links {
-    margin: 0;
-  }
-
-  h1 {
-    margin: 0;
-
-    font-weight: 900;
-    font-size: 3rem;
-  }
-
-  .link a {
-    padding-bottom: 2px;
-    border-bottom: 1px solid var(--textwhite);
-
-    color: var(--textwhite);
-
-    text-decoration: none;
-    transition: 0.1s;
-
-    padding: 0.1rem;
-  }
-
-  .link a:hover {
-    /* padding: 0.1rem; */
-
-    background: var(--textwhite);
-    color: var(--backblack);
-  }
-
-  .secret {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    color: var(--backblack);
-  }
-</style>
