@@ -4,111 +4,108 @@ permalink: /404.html
 
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>404 | lumix</title>
 
-<head>
-	<title>404 | lumix</title>
+    <!-- import roboto font -->
+    <link href="http://fonts.cdnfonts.com/css/roboto" rel="stylesheet" />
+  </head>
 
-	<!-- import roboto font -->
-	<link href="http://fonts.cdnfonts.com/css/roboto" rel="stylesheet">
-</head>
-
-<body>
-	<!-- dont get lost -->
-	<div class="container">
-		<h1>404</h1>
-		<span>that page doesnt exist</span>
-		<span>did you type the correct url?</span>
-		<div class="links">
-			<span>you can also</span>
-			<span class="link"><a href=".">go to home</a></span>
-		</div>
-	</div>
-	<span class="secret">lost?</span>
-</body>
-
+  <body>
+    <!-- dont get lost -->
+    <div class="container">
+      <h1>404</h1>
+      <span>that page doesnt exist</span>
+      <span>did you type the correct url?</span>
+      <div class="links">
+        <span>you can also</span>
+        <span class="link"><a href=".">go to home</a></span>
+      </div>
+    </div>
+    <span class="secret">lost?</span>
+  </body>
 </html>
 
 <style>
-	:root {
-		--backblack: #111111;
-		--backblack2: #1a1a1a;
-		--backblack3: #0a0a0a;
-		--textwhite: #d6d6d6;
-		--test: #ff00ff;
-	}
+  :root {
+    --backblack: #111111;
+    --backblack2: #1a1a1a;
+    --backblack3: #0a0a0a;
+    --textwhite: #d6d6d6;
+    --test: #ff00ff;
+  }
 
-	::selection {
-		background: var(--textwhite);
-		color: var(--backblack);
-	}
+  ::selection {
+    background: var(--textwhite);
+    color: var(--backblack);
+  }
 
-	body {
-		margin: 0;
-		padding: 0;
-		height: 100vh;
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
 
-		background: var(--backblack);
+    background: var(--backblack);
 
-		display: flex;
-		justify-content: center;
-		align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-		font-family: "Roboto";
-		color: var(--textwhite);
-	}
+    font-family: "Roboto";
+    color: var(--textwhite);
+  }
 
-	.container {
-		padding: 1rem;
+  .container {
+    padding: 1rem;
 
-		background: var(--backblack2);
+    background: var(--backblack2);
 
-		box-shadow: 0 0 10px var(--backblack3);
+    box-shadow: 0 0 10px var(--backblack3);
 
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-	}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 
-	.links {
-		margin-bottom: 0.5rem;
-	}
+  .links {
+    margin-bottom: 0.5rem;
+  }
 
-	.last-links {
-		margin: 0;
-	}
+  .last-links {
+    margin: 0;
+  }
 
-	h1 {
-		margin: 0;
+  h1 {
+    margin: 0;
 
-		font-weight: 900;
-		font-size: 3rem;
-	}
+    font-weight: 900;
+    font-size: 3rem;
+  }
 
-	.link a {
-		padding-bottom: 2px;
-		border-bottom: 1px solid var(--textwhite);
+  .link a {
+    padding-bottom: 2px;
+    border-bottom: 1px solid var(--textwhite);
 
-		color: var(--textwhite);
+    color: var(--textwhite);
 
-		text-decoration: none;
-		transition: 0.1s;
+    text-decoration: none;
+    transition: 0.1s;
 
-		padding: 0.1rem;
-	}
+    padding: 0.1rem;
+  }
 
-	.link a:hover {
-		/* padding: 0.1rem; */
+  .link a:hover {
+    /* padding: 0.1rem; */
 
-		background: var(--textwhite);
-		color: var(--backblack);
+    background: var(--textwhite);
+    color: var(--backblack);
+  }
 
-	}
-
-	.secret {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		color: var(--backblack)
-	}
+  .secret {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: var(--backblack);
+  }
 </style>
