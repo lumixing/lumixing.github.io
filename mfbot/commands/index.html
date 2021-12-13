@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>commands | mfbot</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/mfbot/favicon.png" />
+    <link rel="stylesheet" href="/pre.css" />
+    <link rel="stylesheet" href="/mfbot/commands/style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/mfbot/commands/script.js"></script>
+    <meta content="mfbot" property="og:title" />
+    <meta content="the best discord bot" property="og:description" />
+  </head>
+
+  <body>
+    <header class="flex align-c">
+      <a class="link round" href="/mfbot/">
+        <div class="logo inflex">
+          <span class="gray-1">;</span>
+          <span class="gray-2">mfbot</span>
+        </div>
+      </a>
+
+      <a class="link round" href="/mfbot/invite">
+        <div class="inflex">
+          <span class="gray-1">;</span>
+          <span class="gray-2">invite</span>
+        </div>
+      </a>
+
+      <a class="link active round" href="/mfbot/commands">
+        <div class="inflex">
+          <span class="gray-1">;</span>
+          <span class="gray-2">commands</span>
+        </div>
+      </a>
+
+      <a class="link round" href="/mfbot/about">
+        <div class="inflex">
+          <span class="gray-1">;</span>
+          <span class="gray-2">about</span>
+        </div>
+      </a>
+
+      <a class="link round" href="https://github.com/lumixing/mfbot" target="_blank">
+        <div class="inflex">
+          <span class="gray-1">;</span>
+          <span class="gray-2">github</span>
+        </div>
+      </a>
+    </header>
+
+    <main class="flex align-c flex-col">
+      <div class="h1 inflex">
+        <span class="gray-1">;</span>
+        <span class="gray-2">commands</span>
+      </div>
+
+      <div class="item inflex">
+        <span class="gray-1">commands</span>
+        <span class="gray-2">20</span>
+      </div>
+
+      <div class="item inflex">
+        <span class="gray-1">last updated</span>
+        <span class="gray-2">13/12/2021</span>
+      </div>
+
+      <div class="command-container flex flex-col">
+        <div class="command round">
+          <div class="command-label flex flex-col">
+            <div class="flex">
+              <span class="command-name gray-2">about</span>
+              <div class="command-syntax"></div>
+            </div>
+            <span class="command-description gray-1">info about mfbot</span>
+          </div>
+          <div class="command-info">
+            <div><span class="gray-1">aliases: </span><span class="gray-2">a</span></div>
+            <div><span class="gray-1">category: </span><span class="gray-2">utility</span></div>
+            <div><span class="gray-1">permissions: </span><span class="gray-2">none</span></div>
+          </div>
+        </div>
+        <div class="command round">
+          <div class="command-label flex flex-col">
+            <div class="flex">
+              <span class="command-name gray-2">age</span>
+              <div class="command-syntax"><span class="gray-1">(@mention)</span></div>
+            </div>
+            <span class="command-description gray-1">shows the account age of a user</span>
+          </div>
+          <div class="command-info">
+            <div><span class="gray-1">aliases: </span><span class="gray-2">none</span></div>
+            <div><span class="gray-1">category: </span><span class="gray-2">utility</span></div>
+            <div><span class="gray-1">permissions: </span><span class="gray-2">none</span></div>
+          </div>
+        </div>
+        <div class="command round">
+          <div class="command-label flex flex-col">
+            <div class="flex">
+              <span class="command-name gray-2">ban</span>
+              <div class="command-syntax"><span class="gray-1">[@member]</span><span class="gray-1">(reason)</span></div>
+            </div>
+            <span class="command-description gray-1">ban someone from the server</span>
+          </div>
+          <div class="command-info">
+            <div><span class="gray-1">aliases: </span><span class="gray-2">none</span></div>
+            <div><span class="gray-1">category: </span><span class="gray-2">moderation</span></div>
+            <div><span class="gray-1">permissions: </span><span class="gray-2">BAN_MEMBERS</span></div>
+          </div>
+        </div>
+        <div class="command round">
+          <div class="command-label flex flex-col">
+            <div class="flex">
+              <span class="command-name gray-2">calc</span>
+              <div class="command-syntax"><span class="gray-1">[equation]</span></div>
+            </div>
+            <span class="command-description gray-1">calculate an equation</span>
+          </div>
+          <div class="command-info">
+            <div><span class="gray-1">aliases: </span><span class="gray-2">calculate</span></div>
+            <div><span class="gray-1">category: </span><span class="gray-2">utility</span></div>
+            <div><span class="gray-1">permissions: </span><span class="gray-2">none</span></div>
+          </div>
+        </div>
+        <div class="command round">
+          <div class="command-label flex flex-col">
+            <div class="flex">
+              <span class="command-name gray-2">choice</span>
+              <div class="command-syntax"><span class="gray-1">[a</span><span class="gray-1">or</span><span class="gray-1">b]</span></div>
+            </div>
+            <span class="command-description gray-1">let mfbot choose for you</span>
+          </div>
+          <div class="command-info">
+            <div><span class="gray-1">aliases: </span><span class="gray-2">ch</span></div>
+            <div><span class="gray-1">category: </span><span class="gray-2">utility</span></div>
+            <div><span class="gray-1">permissions: </span><span class="gray-2">none</span></div>
+          </div>
+        </div>
+        <div class="command round">
+          <div class="command-label flex flex-col">
+            <div class="flex">
+              <span class="command-name gray-2">clear</span>
+              <div class="command-syntax"><span class="gray-1">[amount</span><span class="gray-1">of</span><span class="gray-1">messages]</span></div>
+            </div>
+            <span class="command-description gray-1">clears messages from channel</span>
+          </div>
+          <div class="command-info">
+            <div><span class="gray-1">aliases: </span><span class="gray-2">c</span></div>
+            <div><span class="gray-1">category: </span><span class="gray-2">moderation</span></div>
+            <div><span class="gray-1">permissions: </span><span class="gray-2">MANAGE_MESSAGES</span></div>
+          </div>
+        </div>
+        <div class="command round">
+          <div class="command-label flex flex-col">
+            <div class="flex">
+              <span class="command-name gray-2">commands</span>
+              <div class="command-syntax"></div>
+            </div>
+            <span class="command-description gray-1">shows a list of commands</span>
+          </div>
+          <div class="command-info">
+            <div><span class="gray-1">aliases: </span><span class="gray-2">cmd, cmds</span></div>
+            <div><span class="gray-1">category: </span><span class="gray-2">utility</span></div>
+            <div><span class="gray-1">permissions: </span><span class="gray-2">none</span></div>
+          </div>
+        </div>
+        <div class="command round">
+          <div class="command-label flex flex-col">
+            <div class="flex">
+              <span class="command-name gray-2">conclear</span>
+              <div class="command-syntax"></div>
+            </div>
+            <span class="command-description gray-1">clears the console</span>
+          </div>
+          <div class="command-info">
+            <div><span class="gray-1">aliases: </span><span class="gray-2">cc</span></div>
+            <div><span class="gray-1">category: </span><span class="gray-2">dev</span></div>
+            <div><span class="gray-1">permissions: </span><span class="gray-2">DEVELOPER</span></div>
+          </div>
+        </div>
+        <div class="command round">
+          <div class="command-label flex flex-col">
+            <div class="flex">
+              <span class="command-name gray-2">eval</span>
+              <div class="command-syntax"><span class="gray-1">[code]</span></div>
+            </div>
+            <span class="command-description gray-1">evaluates js code</span>
+          </div>
+          <div class="command-info">
+            <div><span class="gray-1">aliases: </span><span class="gray-2">ev</span></div>
+            <div><span class="gray-1">category: </span><span class="gray-2">dev</span></div>
+            <div><span class="gray-1">permissions: </span><span class="gray-2">DEVELOPER</span></div>
+          </div>
+        </div>
+        <div class="command round">
+          <div class="command-label flex flex-col">
+            <div class="flex">
+              <span class="command-name gray-2">github</span>
+              <div class="command-syntax"></div>
+            </div>
+            <span class="command-description gray-1">sends the github repo link</span>
+          </div>
+          <div class="command-info">
+            <div><span class="gray-1">aliases: </span><span class="gray-2">git, gh, repo</span></div>
+            <div><span class="gray-1">category: </span><span class="gray-2">utility</span></div>
+            <div><span class="gray-1">permissions: </span><span class="gray-2">none</span></div>
+          </div>
+        </div>
+        <div class="command round">
+          <div class="command-label flex flex-col">
+            <div class="flex">
+              <span class="command-name gray-2">help</span>
+              <div class="command-syntax"><span class="gray-1">(command</span><span class="gray-1">or</span><span class="gray-1">category</span><span class="gray-1">name)</span></div>
+            </div>
+            <span class="command-description gray-1">gives info about a command or category</span>
+          </div>
+          <div class="command-info">
+            <div><span class="gray-1">aliases: </span><span class="gray-2">h</span></div>
+            <div><span class="gray-1">category: </span><span class="gray-2">utility</span></div>
+            <div><span class="gray-1">permissions: </span><span class="gray-2">none</span></div>
+          </div>
+        </div>
+        <div class="command round">
+          <div class="command-label flex flex-col">
+            <div class="flex">
+              <span class="command-name gray-2">html</span>
+              <div class="command-syntax"></div>
+            </div>
+            <span class="command-description gray-1">generate html portion for website</span>
+          </div>
+          <div class="command-info">
+            <div><span class="gray-1">aliases: </span><span class="gray-2">none</span></div>
+            <div><span class="gray-1">category: </span><span class="gray-2">dev</span></div>
+            <div><span class="gray-1">permissions: </span><span class="gray-2">DEVELOPER</span></div>
+          </div>
+        </div>
+        <div class="command round">
+          <div class="command-label flex flex-col">
+            <div class="flex">
+              <span class="command-name gray-2">invite</span>
+              <div class="command-syntax"></div>
+            </div>
+            <span class="command-description gray-1">sends the bot invitation link</span>
+          </div>
+          <div class="command-info">
+            <div><span class="gray-1">aliases: </span><span class="gray-2">inv</span></div>
+            <div><span class="gray-1">category: </span><span class="gray-2">utility</span></div>
+            <div><span class="gray-1">permissions: </span><span class="gray-2">none</span></div>
+          </div>
+        </div>
+        <div class="command round">
+          <div class="command-label flex flex-col">
+            <div class="flex">
+              <span class="command-name gray-2">kick</span>
+              <div class="command-syntax"><span class="gray-1">[@member]</span><span class="gray-1">(reason)</span></div>
+            </div>
+            <span class="command-description gray-1">kick someone off the server</span>
+          </div>
+          <div class="command-info">
+            <div><span class="gray-1">aliases: </span><span class="gray-2">none</span></div>
+            <div><span class="gray-1">category: </span><span class="gray-2">moderation</span></div>
+            <div><span class="gray-1">permissions: </span><span class="gray-2">KICK_MEMBERS</span></div>
+          </div>
+        </div>
+        <div class="command round">
+          <div class="command-label flex flex-col">
+            <div class="flex">
+              <span class="command-name gray-2">log</span>
+              <div class="command-syntax"><span class="gray-1">[code]</span></div>
+            </div>
+            <span class="command-description gray-1">logs js code</span>
+          </div>
+          <div class="command-info">
+            <div><span class="gray-1">aliases: </span><span class="gray-2">none</span></div>
+            <div><span class="gray-1">category: </span><span class="gray-2">dev</span></div>
+            <div><span class="gray-1">permissions: </span><span class="gray-2">DEVELOPER</span></div>
+          </div>
+        </div>
+        <div class="command round">
+          <div class="command-label flex flex-col">
+            <div class="flex">
+              <span class="command-name gray-2">ping</span>
+              <div class="command-syntax"></div>
+            </div>
+            <span class="command-description gray-1">shows ping of mfbot</span>
+          </div>
+          <div class="command-info">
+            <div><span class="gray-1">aliases: </span><span class="gray-2">p</span></div>
+            <div><span class="gray-1">category: </span><span class="gray-2">utility</span></div>
+            <div><span class="gray-1">permissions: </span><span class="gray-2">none</span></div>
+          </div>
+        </div>
+        <div class="command round">
+          <div class="command-label flex flex-col">
+            <div class="flex">
+              <span class="command-name gray-2">rng</span>
+              <div class="command-syntax"><span class="gray-1">(min)</span><span class="gray-1">(max)</span></div>
+            </div>
+            <span class="command-description gray-1">generates a random number</span>
+          </div>
+          <div class="command-info">
+            <div><span class="gray-1">aliases: </span><span class="gray-2">random, rand</span></div>
+            <div><span class="gray-1">category: </span><span class="gray-2">utility</span></div>
+            <div><span class="gray-1">permissions: </span><span class="gray-2">none</span></div>
+          </div>
+        </div>
+        <div class="command round">
+          <div class="command-label flex flex-col">
+            <div class="flex">
+              <span class="command-name gray-2">tell</span>
+              <div class="command-syntax"><span class="gray-1">[message]</span></div>
+            </div>
+            <span class="command-description gray-1">sends a dm to a user</span>
+          </div>
+          <div class="command-info">
+            <div><span class="gray-1">aliases: </span><span class="gray-2">none</span></div>
+            <div><span class="gray-1">category: </span><span class="gray-2">utility</span></div>
+            <div><span class="gray-1">permissions: </span><span class="gray-2">none</span></div>
+          </div>
+        </div>
+        <div class="command round">
+          <div class="command-label flex flex-col">
+            <div class="flex">
+              <span class="command-name gray-2">twitter</span>
+              <div class="command-syntax"></div>
+            </div>
+            <span class="command-description gray-1">sends the mfbot twitter link</span>
+          </div>
+          <div class="command-info">
+            <div><span class="gray-1">aliases: </span><span class="gray-2">tw</span></div>
+            <div><span class="gray-1">category: </span><span class="gray-2">utility</span></div>
+            <div><span class="gray-1">permissions: </span><span class="gray-2">none</span></div>
+          </div>
+        </div>
+        <div class="command round">
+          <div class="command-label flex flex-col">
+            <div class="flex">
+              <span class="command-name gray-2">website</span>
+              <div class="command-syntax"></div>
+            </div>
+            <span class="command-description gray-1">sends the mfbot website link</span>
+          </div>
+          <div class="command-info">
+            <div><span class="gray-1">aliases: </span><span class="gray-2">web, site</span></div>
+            <div><span class="gray-1">category: </span><span class="gray-2">utility</span></div>
+            <div><span class="gray-1">permissions: </span><span class="gray-2">none</span></div>
+          </div>
+        </div>
+
+        <h1>bruh</h1>
+      </div>
+    </main>
+  </body>
+</html>
