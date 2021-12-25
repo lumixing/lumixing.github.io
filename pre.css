@@ -1,5 +1,4 @@
-/* pre.css by lumix (2021.12.12) */
-* { font-family: "Roboto", sans-serif; }
+/* pre.css by lumix (2021.12.25) */
 body { margin: 0; padding: 0; box-sizing: border-box; }
 a { text-decoration: none; }
 .inline { display: inline; }
@@ -11,8 +10,9 @@ a { text-decoration: none; }
 .justify-c { justify-content: center; }
 .align-c { align-items: center; }
 .flex-col { flex-direction: column; }
-.round { border-radius: 5px; }
+.round { border-radius: 50px; }
 .white-t { color: white; }
-.float-r { float: right; }
-.float-l { float: left; }
+.margin-r { margin-right: auto; }
+.margin-l { margin-left: auto; }
+.margin-a { margin: auto; }
 .border-box { box-sizing: border-box; }

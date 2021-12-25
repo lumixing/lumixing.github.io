@@ -1,0 +1,88 @@
+:root {
+  --dark-1: hsl(0, 0%, 7%);
+  --dark-2: hsl(0, 0%, 10%);
+  --dark-3: hsl(0, 0%, 13%);
+  --primary: dodgerblue;
+  --primary-t: hsl(0, 0%, 70%);
+  --secondary-t: hsl(0, 0%, 50%);
+}
+
+* {
+  font-family: "Roboto Mono";
+}
+
+.container {
+  background-color: var(--dark-1);
+  min-height: 100vh;
+}
+
+.main {
+  /* background-color: var(--dark-2); */
+  max-width: 50%;
+  /* min-width: 700px; */
+  min-height: calc(100vh - 32px);
+  padding: 16px;
+  justify-content: space-between;
+}
+
+header {
+  /* background-color: var(--dark-3); */
+  gap: 4px;
+}
+
+header .button.logo {
+  padding: 4px 8px;
+}
+
+header .button {
+  padding: 8px;
+  color: var(--primary-t);
+  transition: 0.1s;
+  position: relative;
+}
+
+header .button:hover {
+  background-color: var(--dark-2);
+}
+
+header .button:active {
+  background-color: var(--dark-3);
+}
+
+.button:not(.logo):before {
+  content: attr(data-text);
+  position: absolute;
+  top: 120%;
+  padding: 4px 8px;
+  background-color: var(--dark-2);
+  color: var(--primary-t);
+  font-size: 16px;
+  border-radius: 50px;
+  opacity: 0;
+  transition: 0.1s opacity;
+}
+
+.button:hover:before {
+  display: block;
+  opacity: 1;
+}
+
+.button:hover .tooltip {
+  visibility: visible;
+}
+
+.logo {
+  font-size: 24px;
+}
+
+.primary-t {
+  color: var(--primary-t);
+}
+
+.secondary-t {
+  color: var(--secondary-t);
+}
+
+main {
+  height: 100%;
+}
