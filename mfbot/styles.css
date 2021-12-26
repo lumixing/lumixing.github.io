@@ -7,6 +7,18 @@
   --secondary-t: hsl(0, 0%, 50%);
 }
 
+@keyframes pulse {
+  0%,
+  100% {
+    color: var(--secondary-t);
+    animation-timing-function: linear;
+  }
+
+  50% {
+    color: var(--primary-t);
+  }
+}
+
 * {
   font-family: "Roboto Mono";
 }
@@ -25,13 +37,23 @@
   justify-content: space-between;
 }
 
-header {
+header,
+.header-right {
   /* background-color: var(--dark-3); */
   gap: 4px;
 }
 
 header .button.logo {
   padding: 4px 8px;
+}
+
+.logo span::before {
+  content: ";";
+  color: var(--secondary-t);
+}
+
+.logo span:hover::before {
+  animation: pulse 1s infinite;
 }
 
 header .button {
@@ -83,6 +105,35 @@ header .button:active {
   color: var(--secondary-t);
 }
 
+.commands-button:hover {
+  color: #f1c40f;
+}
+
+.blog-button:hover {
+  color: #e74c3c;
+}
+
+.invite-button:hover {
+  color: #2ecc71;
+}
+
+.about-button:hover {
+  color: #3498db;
+}
+
+.twitter-button:hover {
+  color: #1da1f2;
+}
+
+.github-button:hover {
+  color: #6e5494;
+}
+
 main {
   height: 100%;
+}
+
+footer {
+  color: hsl(0, 0%, 13%);
+  transform: rotate(180deg) scaleX(-1);
 }
