@@ -1,4 +1,4 @@
-/* pre.css by lumix (2021.12.25) */
+/* pre.css by lumix (2021.12.26) */
 body { margin: 0; padding: 0; box-sizing: border-box; }
 a { text-decoration: none; }
 .inline { display: inline; }
@@ -10,9 +10,15 @@ a { text-decoration: none; }
 .justify-c { justify-content: center; }
 .align-c { align-items: center; }
 .flex-col { flex-direction: column; }
+.gap-s { gap: 4px }
+.gap-m { gap: 8px }
+.gap-l { gap: 16px }
 .round { border-radius: 50px; }
+.round-s { border-radius: 5px; }
 .white-t { color: white; }
 .margin-r { margin-right: auto; }
 .margin-l { margin-left: auto; }
 .margin-a { margin: auto; }
+.margin-0 { margin: 0; }
 .border-box { box-sizing: border-box; }
+.text-c { text-align: center; }

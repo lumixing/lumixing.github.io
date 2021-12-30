@@ -49,6 +49,16 @@ header,
   gap: 4px;
 }
 
+@media (max-width: 400px) {
+  .header-right {
+    display: none;
+  }
+
+  header {
+    justify-content: space-around;
+  }
+}
+
 header .button.logo {
   padding: 4px 8px;
 }
