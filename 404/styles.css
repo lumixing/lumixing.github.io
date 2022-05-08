@@ -1,0 +1,34 @@
+:root {
+  --dark-1: hsl(0, 0%, 7%);
+  --dark-2: hsl(0, 0%, 10%);
+  --dark-3: hsl(0, 0%, 13%);
+  --primary: dodgerblue;
+  --primary-t: hsl(0, 0%, 70%);
+  --secondary-t: hsl(0, 0%, 50%);
+}
+
+* {
+  font-family: "Open Sans";
+}
+
+.container {
+  background-color: var(--dark-1);
+  min-height: 100vh;
+}
+
+.main {
+  min-height: 100vh;
+}
+
+.box {
+  background-color: var(--dark-2);
+  padding: 16px;
+}
+
+.primary-t {
+  color: var(--primary-t);
+}
+
+.secondary-t {
+  color: var(--secondary-t);
+}
