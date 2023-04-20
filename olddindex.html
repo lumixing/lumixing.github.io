@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>lumix</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="logo">lumix</div>
+            <div class="main">
+                <div class="category">
+                    <h2>projects</h2>
+                    <p><a href="https://lumixing.github.io/mfbot/">mfbot</a></p>
+                    <p><a href="https://lumixing.github.io/astatine/">astatine</a></p>
+                    <p><a href="https://github.com/lumixing/minera">minera</a></p>
+                    <p><a href="https://github.com/lumixing/minesweepa">minesweepa</a></p>
+                    <p><a href="https://github.com/lumixing/perlin">perlin</a></p>
+                </div>
+                <div class="category">
+                    <h2>socials</h2>
+                    <p><a href="https://github.com/lumixing">github</a></p>
+                    <p><a href="https://twitter.com/lumixing">twitter</a></p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+    body {
+        background-color: #121212;
+        color: #eeeeee;
+        font-family: "Inter", sans-serif;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+    }
+
+    @media only screen and (max-width: 850px) {
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 0;
+        }
+    }
+
+    @keyframes gradientlogo {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .logo {
+        font-size: 196px;
+        font-weight: 800;
+        user-select: none;
+        /* background: -webkit-linear-gradient(135deg, #1488cc, #2b32b2); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(270deg, #1488cc, #2b32b2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 400% 400%;
+        animation: gradientlogo 10s ease infinite;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .logo {
+            font-size: 30vw;
+        }
+    }
+
+    .category {
+        /* display: flex; */
+        flex-direction: column;
+    }
+
+    .category h2 {
+        font-size: 48px;
+        font-weight: 700;
+        margin: 0;
+    }
+
+    .category p {
+        margin: 0;
+    }
+
+    .category a {
+        font-size: 24px;
+        font-weight: 600;
+        color: hsl(0, 0%, 77%);
+        text-decoration: none;
+        transition: 0.1s;
+    }
+
+    .category a:hover {
+        color: hsl(0, 0%, 88%);
+    }
+</style>

@@ -4,112 +4,162 @@ permalink: /404.html
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>page not found</title>
-    </head>
-    <body>
-        <div class="container">
-            <div class="logo">404</div>
-            <div class="main">
-                <div class="category">
-                    <h2>go to</h2>
-                    <p><a href="https://lumixing.github.io/">home page</a></p>
-                    <p><a href="https://lumixing.github.io/mfbot/">mfbot</a></p>
-                    <p><a href="https://lumixing.github.io/astatine/">astatine</a></p>
-                </div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lumix://404</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <span id="lumix">404://</span>
+        </div>
+        <div class="right">
+            <div class="bundle">
+                <a class="link first">page_not_found</a>
+            </div>
+            <div class="bundle">
+                <a class="link" href="https://lumixing.github.io/">home</a>
             </div>
         </div>
-    </body>
+    </div>
+</body>
 </html>
 
 <style>
-    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
     body {
-        background-color: #121212;
-        color: #eeeeee;
-        font-family: "Inter", sans-serif;
+        background-color: black;
+        color: white;
         padding: 0;
         margin: 0;
-        width: 100%;
         height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
+        font-family: inter;
+        font-size: 64px;
+        font-weight: 700;
+        line-height: 0.9;
+        letter-spacing: -4px;
+        transform: scaleX(1.3);
+        overflow: hidden;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: inherit;
     }
 
     .container {
         display: flex;
-        align-items: center;
-        gap: 4rem;
     }
 
-    @media only screen and (max-width: 850px) {
-        .container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 0;
-        }
-    }
-
-    @keyframes gradientlogo {
-        0% {
-            background-position: 0% 50%;
-        }
-        50% {
-            background-position: 100% 50%;
-        }
-        100% {
-            background-position: 0% 50%;
-        }
-    }
-
-    .logo {
-        font-size: 196px;
-        font-weight: 800;
-        user-select: none;
-        /* background: -webkit-linear-gradient(135deg, #1488cc, #2b32b2); /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(270deg, #ed213a, #93291e);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-size: 400% 400%;
-        animation: gradientlogo 10s ease infinite;
-    }
-
-    @media only screen and (max-width: 600px) {
-        .logo {
-            font-size: 30vw;
-        }
-    }
-
-    .category {
-        /* display: flex; */
+    .right, .righter {
+        display: flex;
         flex-direction: column;
+        /* font-weight: 500; */
     }
 
-    .category h2 {
-        font-size: 48px;
-        font-weight: 700;
-        margin: 0;
+    .right > .bundle {
+        /* background-color: red; */
+        align-self: flex-start;
+        color: gray;
     }
 
-    .category p {
-        margin: 0;
+    .link {
+        transition: color 0.1s;
     }
 
-    .category a {
-        font-size: 24px;
-        font-weight: 600;
-        color: hsl(0, 0%, 77%);
-        text-decoration: none;
-        transition: 0.1s;
+    .right a:hover {
+        color: white;
     }
 
-    .category a:hover {
-        color: hsl(0, 0%, 88%);
+    #lumix {
+        color: darkred;
+        display: inline-block;
+        transition: transform 0.2s;
+    }
+
+    .bundle {
+        display: flex;
+        /* opacity: 0; */
+        /* animation: slideDown ease 0.4s forwards; */
+    }
+
+    .link {
+        opacity: 0;
+    }
+
+    .bundle:first-child .link {
+        animation: slideLeft ease 0.4s forwards;
+    }
+
+    .bundle:nth-child(2) .link {
+        animation: slideDown ease 0.4s forwards 0.1s;
+    }
+
+    .bundle:nth-child(3) .link {
+        animation: slideDown ease 0.4s forwards 0.2s;
+    }
+
+    .rust:hover {
+        color: #dea584 !important;
+    }
+
+    .kotlin:hover {
+        color: #A97BFF !important;
+    }
+
+    .java:hover {
+        color: #b07219 !important;
+    }
+
+    .javascript:hover {
+        color: #f1e05a !important;
+    }
+
+    .typescript:hover {
+        color: #3178c6 !important;
+    }
+
+    @keyframes slideLeft {
+        0% {transform: translateX(-100%);}
+        100% {transform: translateX(0);opacity:1;}
+    }
+
+    @keyframes slideRight {
+        0% {transform: translateX(0);opacity:1;}
+        100% {transform: translateX(-100%);}
+    }
+
+    @keyframes slideDown {
+        0% {transform: translateY(-100%);}
+        100% {transform: translateY(0);opacity:1;}
+    }
+
+    .ext {
+        position: relative;
+        opacity: 0;
+        /* animation: slideDown ease 0.4s forwards; */
+    }
+
+    .link:has(~ .ext:hover) {
+        color: white;
     }
 </style>
+
+<script>
+$(document).ready(() => {
+// $(".ext").css("visibility", "hidden");
+$(".right > .bundle").hover((e) => {
+    let i = $(e.target).parent().index();
+    $("#lumix").css("transform", `translateY(${i*57.59}px)`);
+    // $(e.target).parent().find(".ext").css('visibility', 'visible');
+    $(e.target).parent().find(".ext").css('animation', 'slideLeft ease 0.3s forwards');
+}, (e) => {
+    $(e.target).parent().find(".ext").css('animation', 'slideRight ease 0.2s forwards');
+});
+})
+</script>
