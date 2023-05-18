@@ -1,134 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>astatine</title>
-    </head>
-    <body>
-        <main>
-            <span id="main">
-                astatine
-                <marquee direction="left" width="150" class="badge">pre-pre-pre-alpha!</marquee>
-            </span>
-            <span id="second">basically a terraria clone</span>
-            <div class="links">
-                <a href="https://github.com/lumixing/astatine/" class="link">github</a>
-                <a href="https://twitter.com/astatinegame" class="link">twitter</a>
-            </div>
-        </main>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>astatine</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+</head>
+<body>
+    <img id="logo" onclick="changelogo()" src="astatine1.png" alt="astatine" draggable="false">
+    <a id="github" href="https://github.com/lumixing/astatine/"></a>
+    <img src="something.png" alt="something" id="something" draggable="false">
+</body>
 </html>
 
+<script>
+let runes = Math.random() < 0.01;
+if (runes) {
+    document.getElementById("logo").setAttribute("src", "astatinerunes.png");
+}
+
+let i = 1; 
+function changelogo() {
+    i++;
+
+    if (i > 100 && runes) {
+        document.getElementById("something").classList.add("fadein");
+    }
+
+    if (i > 6 && !runes) i = 6;
+    if (!runes) {
+        document.getElementById("logo").setAttribute("src", `astatine${i}.png`);
+    }
+}
+</script>
+
 <style>
-    body {
-        font-family: inter;
-        margin: 0;
-        padding: 0;
-        background-color: #121212;
-        color: #eee;
-        height: 100vh;
-    }
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-    main {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        /* background-color: rgb(48, 48, 48); */
-    }
+img {
+    user-select: none;
+    image-rendering: pixelated;
+}
 
-    #main {
-        font-size: 128px;
-        font-weight: 800;
-        transform: scaleX(130%);
-        letter-spacing: -5px;
-    }
+#logo {
+    opacity: 0;
+    animation: fadein 1s;
+    animation-fill-mode: forwards;
+    scale: 1.5;
+    animation-delay: 0.5s;
+    margin-bottom: 2rem;
+}
 
-    #second {
-        font-size: 32px;
-        font-weight: 600;
-        transform: scaleX(120%);
-        letter-spacing: -2px;
-        color: rgb(167, 167, 167);
-        margin-top: -15px;
-    }
+#github {
+    width: 192px;
+    height: 76px;
+    background-image: url("github1.png");
+    opacity: 0;
+    animation: fadein 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+}
 
-    section {
-        margin: 0 25%;
-        padding: 4em 0;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
+#github:hover {
+    background-image: url("github2.png");
+}
 
-    .card {
-        /* display: flex; */
-        flex-direction: column;
-    }
+#something {
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    scale: 0.5;
+}
 
-    .title {
-        display: inline-block;
-        font-size: 36px;
-        font-weight: 800;
-        letter-spacing: -1px;
-        transform: scaleX(130%) translateX(11%);
-    }
+.fadein {
+    animation: fadein 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+}
 
-    p {
-        font-size: 18px;
-        color: rgb(197, 197, 197);
+@keyframes fadein {
+    0% {
+        opacity: 0;
     }
-
-    a {
-        color: inherit;
-        text-decoration: none;
+    100% {
+        opacity: 1;
     }
-
-    .link {
-        margin-top: 1rem;
-        font-size: 32px;
-        font-weight: 400;
-        /* transform: scaleX(120%); */
-        letter-spacing: -1px;
-        color: rgb(82, 151, 255);
-        transition: transform 0.2s;
-    }
-
-    .link:hover {
-        font-weight: 500;
-        transform: scaleX(130%);
-    }
-
-    .link:active {
-        font-weight: 600;
-        transform: scaleX(150%);
-    }
-
-    .badge {
-        font-size: 48px;
-        letter-spacing: -3px;
-        position: absolute;
-        transform: rotate(20deg) scaleX(130%);
-        top: 0;
-        right: 0;
-        color: rgb(241, 82, 255);
-        animation: pulse 1s infinite alternate ease-in-out;
-    }
-
-    @keyframes pulse {
-        0% {
-            rotate: -8deg;
-        }
-        100% {
-            rotate: 8deg;
-        }
-    }
-
-    .links {
-        display: flex;
-        gap: 1rem;
-    }
+}
 </style>
