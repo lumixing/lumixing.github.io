@@ -2,11 +2,21 @@ body {
   width: 900px;
   background-color: black;
   color: white;
-  font-family: "px437 nec apc3 8x16";
+  font-family: "apc";
+}
+
+@font-face {
+  font-family: apc;
+  src: url("./static/fonts/apc.ttf");
+}
+
+@font-face {
+  font-family: alagard;
+  src: url("./static/fonts/alagard.ttf");
 }
 
 .lumix {
-  font-family: "Alagard";
+  font-family: "alagard";
   font-size: 48px;
   cursor: pointer;
 }
@@ -140,7 +150,7 @@ article {
 }
 
 button {
-  font-family: "px437 nec apc3 8x16";
+  font-family: "apc";
   font-size: 16px;
 }
 
