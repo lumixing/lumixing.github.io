@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lumix://home</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <span id="lumix">lumix://</span>
+        </div>
+        <div class="right">
+            <div class="bundle">
+                <a class="link first" href="https://lumixing.github.io/astatine/">astatine</a>
+                <a class="ext rust" href="#">.rs</a>
+                <a class="ext kotlin" href="https://github.com/lumixing/astatine/">.kt</a>
+                <a class="ext java" href="https://github.com/lumixing/astatine-java/">.java</a>
+            </div>
+            <div class="bundle">
+                <a class="link" href="https://lumixing.github.io/mfbot/">mfbot</a>
+                <a class="ext typescript" href="https://github.com/lumixing/mfbot">.ts</a>
+                <a class="ext javascript" href="https://github.com/lumixing/mfbot3">.js</a>
+            </div>
+            <div class="bundle">
+                <a class="link" href="https://lumixing.github.io/minera/">minera</a>
+                <a class="ext javascript" href="https://github.com/lumixing/minera">.js</a>
+            </div>
+            <div class="bundle">
+                <a class="link" href="https://lumixing.github.io/image2cape/">image2cape</a>
+                <a class="ext javascript" href="https://github.com/lumixing/image2cape">.js</a>
+            </div>
+            <div class="bundle divider"></div>
+            <div class="bundle">
+                <a class="link" href="https://github.com/lumixing">github</a>
+            </div>
+            <div class="bundle">
+                <a class="link" href="https://twitter.com/lumixing/">twitter</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+    
+    body {
+        background-color: black;
+        color: white;
+        padding: 0;
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: inter;
+        font-size: 64px;
+        font-weight: 700;
+        line-height: 0.9;
+        letter-spacing: -4px;
+        transform: scaleX(1.3);
+        overflow: hidden;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: inherit;
+    }
+
+    .container {
+        display: flex;
+    }
+
+    .right, .righter {
+        display: flex;
+        flex-direction: column;
+        /* font-weight: 500; */
+    }
+
+    .right > .bundle {
+        /* background-color: red; */
+        align-self: flex-start;
+        color: gray;
+    }
+
+    .link {
+        transition: color 0.1s;
+    }
+
+    .right a:hover {
+        color: white;
+    }
+
+    #lumix {
+        color: dodgerblue;
+        display: inline-block;
+        transition: transform 0.2s;
+        margin-right: 4px;
+    }
+
+    .bundle {
+        display: flex;
+        /* opacity: 0; */
+        /* animation: slideDown ease 0.4s forwards; */
+    }
+
+    .link {
+        opacity: 0;
+    }
+
+    .bundle:first-child .link {
+        animation: slideLeft ease 0.4s forwards;
+    }
+
+    .bundle:nth-child(2) .link {
+        animation: slideDown ease 0.4s forwards 0.1s;
+    }
+
+    .bundle:nth-child(3) .link {
+        animation: slideDown ease 0.4s forwards 0.2s;
+    }
+
+    .bundle:nth-child(4) .link {
+        animation: slideDown ease 0.4s forwards 0.3s;
+    }
+
+    .bundle:nth-child(5) {
+        /* animation: slideLeft ease 0.4s forwards 0.4s; */
+        animation: slideLeftWidth ease 0.4s forwards 0.4s;
+    }
+
+    .bundle:nth-child(6) .link {
+        animation: slideDown ease 0.4s forwards 0.5s;
+    }
+
+    .bundle:nth-child(7) .link {
+        animation: slideDown ease 0.4s forwards 0.6s;
+    }
+
+    .rust:hover {
+        color: #dea584 !important;
+    }
+
+    .kotlin:hover {
+        color: #A97BFF !important;
+    }
+
+    .java:hover {
+        color: #b07219 !important;
+    }
+
+    .javascript:hover {
+        color: #f1e05a !important;
+    }
+
+    .typescript:hover {
+        color: #3178c6 !important;
+    }
+
+    @keyframes slideLeft {
+        0% {transform: translateX(-100%);}
+        100% {transform: translateX(0);opacity:1;}
+    }
+
+    @keyframes slideRight {
+        0% {transform: translateX(0);opacity:1;}
+        100% {transform: translateX(-100%);}
+    }
+
+    @keyframes slideDown {
+        0% {transform: translateY(-100%);}
+        100% {transform: translateY(0);opacity:1;}
+    }
+
+    @keyframes slideLeftWidth {
+        0% {width: 0;}
+        100% {width: 50%;opacity:1;}
+    }
+
+    .ext {
+        position: relative;
+        opacity: 0;
+        /* animation: slideDown ease 0.4s forwards; */
+    }
+
+    .link:has(~ .ext:hover) {
+        color: white;
+    }
+
+    .divider {
+        margin: 16px 0 4px 0;
+        /* opacity:0; */
+        /* width: 100%; */
+        height: 4px;
+        background-color: rgb(39, 39, 39);
+    }
+</style>
+
+<script>
+$(document).ready(() => {
+// $(".ext").css("visibility", "hidden");
+$(".right .bundle").hover((e) => {
+    let i = $(e.target).parent().index();
+    let buffer = 0;
+    if (i > 3) {
+        i--;
+        buffer = 24;
+    }
+    $("#lumix").css("transform", `translateY(${i*57.59+buffer}px)`);
+    $(e.target).parent().find(".ext").css('animation', 'slideLeft ease 0.3s forwards');
+}, (e) => {
+    $(e.target).parent().find(".ext").css('animation', 'slideRight ease 0.2s forwards');
+});
+})
+</script>

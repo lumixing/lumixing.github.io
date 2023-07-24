@@ -1,19 +1,22 @@
-/* pre.css by lumix (2021.12.26) */
+/* pre.css by lumix (2023.07.23) */
 body { margin: 0; padding: 0; box-sizing: border-box; }
-a { text-decoration: none; }
+a { text-decoration: none; color: inherit; }
 .inline { display: inline; }
 .block { display: block; }
 .inblock { display: inline-block; }
 .flex { display: flex; }
 .inflex { display: inline-flex }
 .flex-c { display: flex; justify-content: center; align-items: center; }
+.flex-1 { flex: 1; }
 .justify-c { justify-content: center; }
+.justify-s { justify-content: space-between; }
 .align-c { align-items: center; }
+.align-e { align-items: end; }
 .flex-col { flex-direction: column; }
 .gap-s { gap: 4px }
 .gap-m { gap: 8px }
-.gap-l { gap: 16px }
-.round { border-radius: 50px; }
+.gap { gap: 16px }
+.round { border-radius: 500000px; }
 .round-s { border-radius: 5px; }
 .white-t { color: white; }
 .margin-r { margin-right: auto; }
