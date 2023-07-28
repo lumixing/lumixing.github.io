@@ -1,28 +1,33 @@
-console.log("successfully loaded a LOT of js!");
+console.log("successfully loaded a lot of js!");
 
-let lumix_code = [];
-let bounces = 0;
+let lumixCode = [];
+let bounceCount = 0;
+let bounceLastPos = [0, 0];
 
-let letters = document.querySelectorAll(".lumix > *");
-let profile = document.getElementById("profile");
-let bouncy = document.getElementById("bounce");
-let bounceCount = document.querySelector(".bounce-count");
-let coolButton = document.getElementById("cool");
-let flash = document.getElementById("flash");
-let lightLink = document.getElementById("light-link");
-let version = document.querySelector(".version");
+let flashbangSound = new Audio("./static/sounds/flashbang.mp3");
 
-let flashbang_sound = new Audio("./static/sounds/flashbang.mp3");
+randomProfilePicture();
+bounce();
 
-init();
+query(".lumix > *", true).forEach((l, i) => {
+    l.addEventListener("click", () => {
+        lumixCode.push(i);
+        if (btoa(JSON.stringify(lumixCode)) != "WzAsMiw0LDQsMywxLDJd") return;
+        alert("hooray! you found a secret!");
+    });
+});
 
-coolButton.addEventListener("click", () => {
+function randomVersion(e) {
+    e.textContent = Math.random();
+}
+
+function randomEffect() {
     switch (~~(Math.random() * 2)) {
-        case 0:
+        case 0: // random font
             let fonts = ["comic sans ms", "arial", "calibri", "cambria", "consolas", "courier pro", "impact", "ink free", "segoe script", "tahoma", "verdana", "webdings", "wingdings"];
             document.querySelector("body").style.fontFamily = fonts[~~(Math.random() * fonts.length)];
             break;
-        case 1:
+        case 1: // random body background-color
             let r = Math.random() * 256;
             let g = Math.random() * 256;
             let b = Math.random() * 256;
@@ -31,61 +36,9 @@ coolButton.addEventListener("click", () => {
         default:
             break;
     }
-});
-
-letters.forEach((l, i) => {
-    l.addEventListener("click", () => {
-        lumix_code.push(i);
-        check_lumix_code();
-    });
-});
-
-version.addEventListener("click", () => {
-    version.textContent = Math.random();
-});
-
-function check_lumix_code() {
-    console.log(btoa(JSON.stringify(lumix_code)))
-    if (btoa(JSON.stringify(lumix_code)) != "WzAsMiw0LDQsMywxLDJd") return; // ;)
-    alert("hooray! you found a secret!");
 }
 
-function flashbang() {
-    flashbang_sound.play();
-
-    flash.style.display = "block";
-
-    setTimeout(() => {
-        flash.style.opacity = "0";
-        lightLink.setAttribute("rel", "stylesheet");
-        document.getElementById("flashbang").remove();
-}, 2000);
-    setTimeout(() => {
-        flash.style.display = "none";
-        flash.style.opacity = "1";
-    }, 4000);
-}
-
-function init() {
-    random_profile();
-    bounce();
-}
-
-function bounce() {
-    setInterval(() => {
-        bounceEffect()
-    }, 500*2);
-    setInterval(() => {
-        bounceEffect()
-    }, 1400*2);
-}
-
-function bounceEffect() {
-    bounceCount.textContent = ++bounces;
-    bouncy.style.filter = `hue-rotate(${Math.random() * 360}deg)`;
-}
-
-function random_profile() {
+function randomProfilePicture() {
     let pics = [
         "normal.png",
         "pixelated.png",
@@ -101,8 +54,79 @@ function random_profile() {
         "snake.gif",
         "veryglitch.gif",
     ];
-    let random_pic = pics[~~(Math.random() * pics.length)];
+    let randomPic = pics[~~(Math.random() * pics.length)];
 
-    profile.setAttribute("src", `./static/profile/${random_pic}`);
+    profile.setAttribute("src", `./static/profile/${randomPic}`);
     profile.style.borderColor = `hsl(${Math.random() * 360}, 100%, 50%)`
+}
+
+// insane physics engine
+function bounce() {
+    let bouncy = document.getElementById("bounce");
+    let bounceBox = document.getElementById("bounce-box");
+    let bounceCounter = query(".bounce-count");
+
+    setInterval(() => {
+        let x = ~~(bouncy.getBoundingClientRect().left - bounceBox.getBoundingClientRect().left);
+        let y = ~~(bouncy.getBoundingClientRect().top - bounceBox.getBoundingClientRect().top);
+
+        // TOP COLLISIONS
+        if (y <= 8 && !bounceLastPos[0]) {
+            bounceLastPos[0] = true;
+            bounceCounter.textContent = ++bounceCount;
+        }
+        if (y > 8 && bounceLastPos[0]) {
+            bounceLastPos[0] = false;
+        }
+
+        // RIGHT COLLISIONS
+        if (x <= 233-8 && !bounceLastPos[1]) {
+            bounceLastPos[1] = true;
+            bounceCounter.textContent = ++bounceCount;
+        }
+        if (x > 233-8 && bounceLastPos[1]) {
+            bounceLastPos[1] = false;
+        }
+
+        // BOTTOM COLLISIONS
+        if (y <= 84-8 && !bounceLastPos[2]) {
+            bounceLastPos[2] = true;
+            bounceCounter.textContent = ++bounceCount;
+        }
+        if (y > 84-8 && bounceLastPos[2]) {
+            bounceLastPos[2] = false;
+        }
+
+        // LEFT COLLISIONS
+        if (x <= 8 && !bounceLastPos[3]) {
+            bounceLastPos[3] = true;
+            bounceCounter.textContent = ++bounceCount;
+        }
+        if (x > 8 && bounceLastPos[3]) {
+            bounceLastPos[3] = false;
+        }
+    }, 100);
+}
+
+function flashbang() {
+    flashbangSound.play();
+
+    let flash = query("#flash");
+
+    flash.style.display = "block";
+    query("#light-link").setAttribute("rel", "stylesheet");
+
+    setTimeout(() => {
+        flash.style.opacity = "0";
+        query("#flashbang").remove();
+    }, 2000);
+    setTimeout(() => {
+        flash.style.display = "none";
+        flash.style.opacity = "1";
+    }, 4000);
+}
+
+function query(query, all = false) {
+    if (all) { return document.querySelectorAll(query); }
+    return document.querySelector(query);
 }
