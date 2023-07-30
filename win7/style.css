@@ -1,0 +1,288 @@
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    background-image: url(static/wallpaper.png);
+    background-position: center;
+    background-size: cover;
+    font-family: "Segoe UI";
+    overflow: hidden;
+    perspective: 1000px;
+}
+
+.window {
+    width: 600px;
+    height: 400px;
+    position: absolute;
+    top: 200px;
+    left: 300px;
+    border-radius: 6px;
+    background-color: rgba(0, 74, 148, 0.5);
+    outline: 1px solid #0C1827;
+    border: 1px solid #D8E3F1;
+    backdrop-filter: blur(4px);
+    box-shadow: 2px 2px 16px black, 0px 0px 4px black;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    user-select: none;
+    min-width: 200px;
+    min-height: 50px;
+    animation: openWindow .2s ease;
+}
+
+@keyframes openWindow {
+    0% {
+        opacity: 0;
+        transform: rotateX(10deg) scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotateX(0) scale(1);
+    }
+}
+
+@keyframes minimizeWindow {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    
+    100% {
+        opacity: 0;
+        left: -10%;
+        top: calc(100vh - 10%);
+        transform: scale(0.5);
+    }
+}
+
+.window > .head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.window > .head > span {
+    padding: 4px 16px 4px 8px;
+    text-shadow: 0 0 16px white, 0 0 16px white, 0 0 16px white, 0 0 16px white, 0 0 16px white;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 14px
+}
+
+.window > .body {
+    width: calc(100% - 16px);
+    height: calc(100% - 38px);
+    background-color: white;
+    align-self: center;
+    outline: 1px solid #AFC6E4;
+    border: 1px solid #2A4462;
+    border-radius: 1px;
+    overflow: hidden;
+}
+
+.window > .head > .window-head-buttons {
+    display: flex;
+    margin-right: 8px;
+    margin-top: -1px;
+}
+
+.window > .head > .window-head-buttons > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.window > .head .close-button {
+    background: linear-gradient(0deg, rgba(205,133,109,1) 0%, rgba(197,74,55,1) 50%, rgba(214,131,118,1) 50%, rgba(226,173,167,1) 100%);
+    width: 48px;
+    height: 18px;
+    border-bottom-right-radius: 4px;
+    border: 1px solid #E0B9AD;
+    outline: 1px solid #582F27;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+}
+
+.window > .head .close-button:hover {
+    box-shadow: 0 2px 8px red, inset 0 0 8px red;
+}
+
+.window > .head .maximize-button, .window > .head .minimize-button {
+    background: linear-gradient(0deg, rgba(151,199,222,1) 0%, rgba(134,185,201,1) 50%, rgba(178,214,226,1) 50%, rgba(178,214,226,1) 100%);
+    width: 32px;
+    height: 18px;
+    border: 1px solid #C6E5F1;
+    outline: 1px solid #435860;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+}
+
+.window > .head .maximize-button:hover, .window > .head .minimize-button:hover {
+    box-shadow: 0 2px 8px cyan, inset 0 0 8px cyan;
+}
+
+.window > .head .minimize-button {
+    border-bottom-left-radius: 4px;
+}
+
+.window > .window-resize {
+    position: absolute;
+}
+
+.window > .top-resize {
+    width: calc(100% - 16px - 118px);
+    height: 8px;
+    top: -4px;
+    left: 8px;
+    cursor: n-resize;
+}
+
+.window > .top-right-resize {
+    width: 8px;
+    height: 16px;
+    top: -4px;
+    right: -4px;
+    cursor: ne-resize;
+}
+
+.window > .right-resize {
+    width: 8px;
+    height: calc(100% - 16px);
+    right: -4px;
+    bottom: 8px;
+    cursor: e-resize;
+}
+
+.window > .bottom-right-resize {
+    width: 16px;
+    height: 16px;
+    bottom: -4px;
+    right: -4px;
+    cursor: se-resize;
+}
+
+.window > .bottom-resize {
+    width: calc(100% - 16px);
+    height: 8px;
+    bottom: -4px;
+    left: 8px;
+    cursor: s-resize;
+}
+
+.window > .bottom-left-resize {
+    width: 16px;
+    height: 16px;
+    bottom: -4px;
+    left: -4px;
+    cursor: sw-resize;
+}
+
+.window > .left-resize {
+    width: 8px;
+    height: calc(100% - 16px);
+    left: -4px;
+    bottom: 8px;
+    cursor: w-resize;
+}
+
+.window > .top-left-resize {
+    width: 16px;
+    height: 16px;
+    top: -4px;
+    left: -4px;
+    cursor: nw-resize;
+}
+
+#taskbar {
+    width: 100%;
+    height: 38px;
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 74, 148, 0.5);
+    box-shadow: 0 -1px 0 #86C4E3, 0 -2px 0 #143E53;
+    backdrop-filter: blur(4px);
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+}
+
+#taskbar > .taskbar-left {
+    height: 100%;
+    display: flex;
+    gap: 4px;
+}
+
+#start {
+    aspect-ratio: 1.5 / 1;
+    height: 100%;
+    background-image: url(static/start_normal.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: background-image 0.2s;
+    cursor: pointer;
+}
+
+#start:hover {
+    background-image: url(static/start_hover.png);
+}
+
+.taskbar-app {
+    margin-top: -1px;
+    height: calc(100%);
+    aspect-ratio: 3 / 2;
+    border: 1px solid #C0D5E3;
+    outline: 1px solid #0E3147;
+    border-radius: 2px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(158deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 50%);
+}
+
+.taskbar-app-closed {
+    border: 0;
+    outline: 0;
+    background: none;
+}
+
+.taskbar-app-double {
+    width: 53px;
+    margin-right: 6px;
+}
+
+.taskbar-app-double::after, .taskbar-app-triple::before, .taskbar-app-triple::after {
+    content: "";
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    transform: translateX(29px);
+    border-radius: 0 2px 2px 0;
+    border: 1px solid #C0D5E3;
+    border-left: 0;
+    box-sizing: border-box;
+    box-shadow: 0 0 0px 1px #0E3147;
+    opacity: 0.7;
+}
+
+.taskbar-app-triple {
+    width: 49px;
+    margin-right: 10px;
+}
+
+.taskbar-app-triple::before {
+    transform: translateX(27px);
+}
+
+.taskbar-app-triple::after {
+    transform: translateX(32px);
+    opacity: 0.4;
+}
+
+.taskbar-app > img {
+    height: 90%;
+}

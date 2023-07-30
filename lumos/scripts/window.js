@@ -90,7 +90,7 @@ function dimDenWindow() {
 function lumixWindow() {
     createWindow({
         title: "lumix's epic website B)",
-        url: "https://lumixing.github.io" 
+        url: "https://lumixing.github.io/lumos" 
     });
 }
 
@@ -101,6 +101,15 @@ function changeFontWindow() {
             <button onclick="document.querySelector('body').style.fontFamily = 'inter'">click me for cool font</button>   
         `,
         autoSize: true
+    });
+}
+
+function settingsWindow() {
+    createWindow({
+        title: "settings",
+        content: /*html*/`
+            yo
+        `
     });
 }
 

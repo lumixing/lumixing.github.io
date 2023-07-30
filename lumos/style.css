@@ -18,13 +18,11 @@ body {
 }
 
 .window {
-    /* display: flex; */
-    /* flex-direction: column; */
+    display: block;
     min-width: 200px;
     min-height: 200px;
     position: fixed;
     user-select: none;
-    display: block;
     animation: windowOpen .1s ease forwards;
 }
 
@@ -39,13 +37,11 @@ body {
 }
 
 @keyframes windowMinimize {
-    0% {
-        transform: translateY(0);
-    }
-
     100% {
-        transform: translateY(100%) scaleX(0);
         opacity: 0;
+        transform: scale(0.7);
+        top: 60%;
+        left: -5%;
     }
 }
 
@@ -87,6 +83,7 @@ body {
     user-select: none;
     cursor: pointer;
     transition: background-color 0.1s;
+    align-self: start;
 }
 
 .icon:hover {

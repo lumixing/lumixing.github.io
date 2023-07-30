@@ -3,7 +3,7 @@ let apps = document.querySelector(".apps");
 let clock = document.getElementById("clock");
 
 updateClock();
-setInterval(updateClock, 1000);
+setInterval(updateClock, 500);
 
 function updateClock() {
     let date = new Date();
@@ -29,18 +29,18 @@ function focusApp(e) {
 
     window.style.zIndex = ++zIndex;
 
-    if (window.style.display == "block") { // minimize
-        window.style.animation = "windowMinimize .2s ease";
-        
-        setTimeout(() => {
-            window.style.display = "none";
-            window.style.animation = "none";
-        }, 200);
-    } else { // focus
+    if (window.style.display == "none") { // focus
         window.style.display = "block";
         window.style.animation = "windowMinimize .2s ease reverse forwards";
         
         setTimeout(() => {
+            window.style.animation = "none";
+        }, 200);
+    } else { // minimize
+        window.style.animation = "windowMinimize .2s ease forwards";
+        
+        setTimeout(() => {
+            window.style.display = "none";
             window.style.animation = "none";
         }, 200);
     }
