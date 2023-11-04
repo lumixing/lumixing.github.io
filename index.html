@@ -3,114 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lumix!</title>
-    <link rel="stylesheet" href="pre.css">
+    <title>lumix</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital@0;1&family=Tektur&family=Titillium+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="debug.css"> -->
-    <link id="acc-link" rel="none" href="acc.css" >
-    <link id="light-link" rel="none" href="light.css" >
-    <script src="script.js" defer></script>
 </head>
-<body class="margin-a">
-    <div id="flash"></div>
-    <header class="flex justify-s align-c">
-        <div class="lumix flex align-e">
-            <div class="letter-l">l</div>
-            <div class="letter-u">u</div>
-            <div class="letter-m">m</div>
-            <div class="letter-i">i</div>
-            <div class="letter-x">x</div>
-            <div class="version" title="25/07/2023" onclick="randomVersion(this)">0.2</div>
+<body>
+    <div class="left">
+        <div id="ui">
+            <div class="text lumix">lumix</div>
+            <div class="text lumix">lumix</div>
+            <div class="text lumix">lumix</div>
+            <div class="text lumix">lumix</div>
+            <div class="text lumix">lumix</div>
+            <div class="text lumix">lumix</div>
+            <div class="text lumix">lumix</div>
+            <div class="text lumix">lumix</div>
+            <div class="text lumix">lumix</div>
+            <div class="text lumix">lumix</div>
+            <div class="text lumix">lumix</div>
+            <div class="text lumix">lumix</div>
+            <div class="text lumix">lumix</div>
+            <div class="text lumix">lumix</div>
+            <div class="text lumix">lumix</div>
+            <div class="text lumix">lumix</div>
+            <div class="text lumix">lumix</div>
+            <div class="text lumix">lumix</div>
+            <div class="text lumix">lumix</div>
+            <div class="text lumix">lumix</div>
+            <div class="text lumix">lumix</div>
+            <div class="text lumix">lumix</div>
+            <div class="text lumix">lumix</div>
+            <div class="text lumix">lumix</div>
+            <div class="text lumix">lumix</div>
+            <div class="text lumix">lumix</div>
         </div>
-        <button id="flashbang" onclick="flashbang()">FLASHBANG!!</button>
-    </header>
-    <div class="main-wrapper flex">
-        <aside class="flex flex-col gap">
-            <article class="flex gap-m">
-                <img id="profile" src="static/profile/normal.png" alt="lumix!!">
-                <div class="flex flex-col">
-                    <span title="Sunday, July 23 2023">lumix status:</span>
-                    <i>now with more accurate bouncy!</i>
-                </div>
-            </article>
-            <article>
-                <marquee class="block" onmouseover="this.stop();" onmouseout="this.start();">
-                    <a href="https://dimden.dev/"><img src="https://dimden.dev/services/images/88x31.gif"></a>
-                    <a href="https://namemc.com/profile/lumix.7"><img src="./static/buttons/minecraft.gif"></a>
-                    <a href="https://twitter.com/lumixing"><img src="./static/buttons/twitter.gif"></a>
-                    <img src="./static/buttons/vscode.gif">
-                    <img src="./static/buttons/css.png">
-                </marquee>
-            </article>
-            <article id="bounce-box" style="padding: 0;">
-                <span class="bounce-count">0</span>
-                <marquee class="block" direction="down" height="100" behavior="alternate" scrollamount="5" scrolldelay="60">
-                    <marquee class="block" behavior="alternate" scrollamount="5" scrolldelay="60">
-                        <img id="bounce" width="16" src="./static/profile/normal.png" alt="smolumix">
-                    </marquee>
-                </marquee>
-            </article>
-            <article class="flex-c">
-                <button onclick="randomEffect()">cool button</button>
-            </article>
-        </aside>
-        <main class="flex-1 flex flex-col gap">
-            <article>
-                <h1>welcome to here!</h1>
-                <p>im am lumix and i code stuff. this is the newest and probably last version of the website!</p> 
-            </article>
-            <article>
-                <h1>projects</h1>
-                <p>here are some cool projects:</p>
-                <ul>
-                    <li>
-                        <a href="https://github.com/lumixing/astatine">astatine</a>: 2d survival game (paused)
-                        <i style="color: #dea584">rust</i>
-                        <i><a href="https://github.com/lumixing/astatine-kt/" style="color: #A97BFF">kotlin</a></i>
-                        <i><a href="https://github.com/lumixing/astatine-java/" style="color: #b07219">java</a></i>
-                    </li>
-                    <li>
-                        <a href="https://github.com/lumixing/disarray-bevy">disarray</a>: 2d roguelike shooter (in-dev)
-                        <i style="color: #dea584">rust</i>
-                    </li>
-                    <li>
-                        <a href="https://github.com/lumixing/astatine">mfbot</a>: the best discord bot (dead)
-                        <i style="color: #3178c6">typescript</i>
-                    </li>
-                    <li>
-                        <a href="https://lumixing.github.io/image2cape/">image2cape</a>: convert images to minecraft capes
-                        <i style="color: #f1e05a">javascript</i>
-                    </li>
-                    <li>
-                        <a href="https://lumixing.github.io/minera/" rel="${Loc}">minera</a>: minesweeper clone (buggy)
-                        <i style="color: #f1e05a">javascript</i>
-                    </li>
-                    <li>
-                        <a href="https://lumixing.github.io/pseudoku/">pseudoku</a>: sudoku clone (buggy)
-                        <i style="color: #f1e05a">javascript</i>
-                    </li>
-                    <li>
-                        <a href="https://lumixing.github.io/256/">256</a>: 2048 "clone"
-                        <i style="color: #f1e05a">javascript</i>
-                    </li>
-                </ul>
-                <p>..and a lot more! <a href="https://github.com/lumixing">github/lumixing</a></p>
-            </article>
-            <article>
-                <h1>changelog</h1>
-                here are some changes:
-                <ul>
-                    <li>uhhh</li>
-                    <li>ummm let me rememrber</li>
-                    <li>Urmm...</li>
-                    <li>idk</li>
-                </ul>
-                ty
-            </article>
-        </main>
+        <!-- <div class="button">a</div> -->
     </div>
-    <footer>
-        this is a footer ooooo!
-    </footer>
+    <div class="right">
+        <div class="projects-text-wrapper">
+            <span class="projects-text">projects</span>
+        </div>
+        <div class="projects">
+            <a href="https://github.com/lumixing/astatine" class="project-link">
+                <div class="project">
+                    <img class="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEaQ6JB3Evp9ZoGdTTqvH4pkFkSLdpiZEO2kL-V1FcH51tPR3dTn35LZznAInf_gUMOWw&usqp=CAU" alt="">
+                    <div class="head">
+                        <span class="title">astatine</span>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-plain.svg" />
+                    </div>
+                    <span class="description">2d sandbox survival game</span>
+                </div>
+            </a>
+            <a href="https://lumixing.github.io/image2cape/" class="project-link">
+                <div class="project">
+                    <img class="image" src="https://media.tenor.com/6uNPIF401CAAAAAC/angry-cat-angry-wide-cat-meme.gif" alt="">
+                    <div class="head">
+                        <span class="title">image2cape</span>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" />
+                    </div>
+                    <span class="description">converts any image to a minecraft cape texture</span>
+                </div>
+            </a>
+            <a href="https://github.com/lumixing/mfbot" class="project-link">
+                <div class="project">
+                    <img class="image" src="https://media.tenor.com/6uNPIF401CAAAAAC/angry-cat-angry-wide-cat-meme.gif" alt="">
+                    <div class="head">
+                        <span class="title">mfbot</span>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" />
+                    </div>
+                    <span class="description">the best discord bot</span>
+                </div>
+            </a>
+        </div>
+    </div>
 </body>
 </html>
+
+<script>
+document.querySelectorAll(".project-link").forEach((el) => {
+    let p = el.querySelector(".project");
+    el.addEventListener("mousemove", (e) => {
+        let rx = e.layerX - el.clientWidth / 2;
+        rx /= 16;
+        let ry = e.layerY - el.clientHeight / 2;
+        ry /= -4;
+        p.style.transform = `rotateY(${rx}deg) rotateX(${ry}deg)`;
+    });
+    el.addEventListener("mouseleave", () => {
+        p.style.transform = "";
+    });
+});
+</script>
