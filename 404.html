@@ -1,0 +1,53 @@
+---
+permalink: /404.html
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page not found: lumix</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+</head>
+<body>
+    <main>
+        <div class="title">
+            <span class="typing" style="width: 14ch;animation: typing 1.5s steps(14), blink .5s step-end infinite alternate;">page not found</span>
+            <img src="static/swearing.png" onclick="emoji(this)" alt="!!">
+        </div>
+        <span>the page you tried accessing seems not to be here!</span>
+        <span>try one of these instead:</span>
+        <div>
+            <span><a href="/">home</a></span>
+            <span><a href="/mfbot">mfbot</a></span>
+            <span><a href="/astatine">astatine</a></span>
+        </div>
+    </main>
+    </body>
+</html>
+
+<script>
+    const emojis = [
+        "static/angry.png",
+        "static/rage.png",
+        "static/rolling.png",
+        "static/swearing.png",
+    ];
+
+    function emoji(e) {
+        e.src = emojis[~~(Math.random() * emojis.length)];
+    }
+</script>
+
+<style>
+    img {
+        transition: scale 0.1s;
+        cursor: pointer;
+    }
+
+    img:hover {
+        scale: 1.1;
+    }
+</style>
