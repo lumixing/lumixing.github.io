@@ -1,0 +1,69 @@
+@import url('https://fonts.cdnfonts.com/css/noto-serif-hebrew');
+@import url('https://fonts.cdnfonts.com/css/noto-sans-new-tai-lue');
+@import url('https://fonts.cdnfonts.com/css/inconsolata-2');
+
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    font-family: 'Noto Serif Hebrew', sans-serif;
+    background-color: black;
+    color: #eee;
+    font-size: 18px;
+    margin-left: 20%;
+    line-height: 1.4;
+}
+
+body.sans {
+    font-family: 'Noto Sans New Tai Lue', sans-serif;
+}
+
+button {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    padding: 0 2px;
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+}
+
+button::before {
+    content: "[";
+}
+
+button::after {
+    content: "]";
+}
+
+a {
+    color: inherit;
+    padding: 0 2px;
+}
+
+a:hover {
+    background-color: white;
+    color: black;
+}
+
+code {
+    font-family: 'Inconsolata', sans-serif;
+    font-size: 18px;
+    border: 1px solid #888;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+main {
+    overflow: auto;
+    max-width: 800px;
+}
+
+.switch-font {
+    float: right;
+}
