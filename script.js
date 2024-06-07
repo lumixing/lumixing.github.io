@@ -151,6 +151,6 @@ function isMobile() {
 }
 
 // redirect mobile users to old homepage
-if (isMobile() || true) {
+if (isMobile()) {
     window.location.replace("https://lumix.lol/old/");
 }
