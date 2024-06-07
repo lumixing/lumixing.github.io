@@ -1,93 +1,69 @@
-@font-face {
-    font-family: "Luculent";
-    src: url("static/luculent.ttf") format("truetype");
+:root {
+    --window-head-background: white;
+    --window-border: white;
+    --button-background: white;
+    --button-hover-background: rgb(206, 206, 206);
+    --button-text: black;
 }
 
 body {
     padding: 0;
     margin: 0;
     height: 100vh;
-    font-family: "Luculent";
     background-color: black;
     color: white;
-    font-size: 18px;
-    display: flex;
-    margin-left: 30%;
-    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    overflow: hidden;
 }
 
-@media only screen and (max-width: 1000px) {
-    body {
-        margin-left: 0;
-        justify-content: center;
-    }
-}
-
-@media only screen and (max-width: 700px) {
-    body {
-        margin: 16px;
-        margin-top: 30%;
-        height: 100%;
-        align-items: start;
-    }
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.projects {
-    display: flex;
-    flex-direction: column;
+h1, p {
+    margin: 0;
 }
 
 a {
-    color: white;
-    padding: 2px 0;
+    color: dodgerblue;
 }
 
-a:hover {
-    background-color: white;
+button {
+    background-color: var(--button-background);
+    color: var(--button-text);
+    border: 0;
+    padding: 0;
+    font-size: 16px;
+    padding: 2px 4px;
+}
+
+button:hover {
+    background-color: var(--button-hover-background);
+}
+
+.window {
+    position: absolute;
+}
+
+.window-head {
+    background-color: var(--window-head-background);
     color: black;
+    user-select: none;
+    padding: 2px 4px;
 }
 
-.title {
-    display: flex;
-    align-items: center;
-    gap: 4px;
+.window-body {
+    background-color: black;
+    border: 1px solid var(--window-border);
+    height: 100%;
+    user-select: none;
+    padding: 4px;
+    overflow: auto;
 }
 
-img {
-    width: 20px;
-    animation: emoji 0.5s forwards;
-    animation-delay: 1.5s;
-    transform: rotateY(90deg) rotateZ(90deg);
-}
-
-.typing {
-    width: 16ch;
-    animation: typing 1.5s steps(16), blink .5s step-end infinite alternate;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 2px solid;
-}
-
-@keyframes typing {
-    from {
-        width: 0
-    }
-}
-
-@keyframes blink {
-    50% {
-        border-color: transparent
-    }
-}
-
-@keyframes emoji {
-    to {
-        transform: rotateX(0);
-    }
-}
+.aligned { text-align: center; }
+.height { height: 100%; }
+.flex { display: flex; }
+.justify { justify-content: center; }
+.align { align-items: center; }
+.center { justify-content: center; align-items: center; }
+.column { flex-direction: column; }
+.gap4 { gap: 4px; }
+.gap8 { gap: 8px; }
+.gap16 { gap: 16px; }
