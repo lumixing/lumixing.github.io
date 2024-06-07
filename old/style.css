@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Luculent";
-    src: url("static/luculent.ttf") format("truetype");
+    src: url("/static/luculent.ttf") format("truetype");
 }
 
 body {
