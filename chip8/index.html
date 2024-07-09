@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>understanding the chip-8 programming language - lumix</title>
+    <style>
+        body {
+            padding: 8px;
+            margin: auto;
+            max-width: 80ch;
+            /* margin-bottom: 100vh; */
+        }
+        a {
+            color: blue;
+        }
+        h2 a, h3 a {
+            text-decoration: none;
+        }
+        table, th, td {
+            border: 1px solid;
+        }
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            border: 2px solid;
+        }
+        td {
+            width: 24px;
+            height: 24px;
+            text-align: center;
+        }
+        label {
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>understanding the chip-8 programming language</h1>
+    <p>note that the terms "emulator" and "interpreter" are used interchangeably.<p>
+
+    <h2 id="specifications">specifications <a href="#specifications">#</a></h2>
+    <h3 id="memory">memory <a href="#memory">#</a></h3>
+    <p>chip-8 uses 4kb (4096 bytes) of memory (RAM). it is split into two main parts.</p>
+    <p>the first part is read-only, reserved for the emulator, spanning from memory location 0x000 (0) to 0x1FF (511). for emulators it is only used to write hardcoded font sprites, specifically hex characters from 0x0 to 0xF, usually spanning from memory location 0x00 to 0x50 (80) (5 bytes for each character).</p>
+    <p>the second part is write and read memory like usual RAM, spanning from memory location 0x200 (512) to the end 0xFFF (4095). it contains instructions and data such as sprites and saved register values.</p>
+
+    <h3 id="registers">registers <a href="#registers">#</a></h3>
+    <p>chip-8 offers a few registers which act like variables or pointers.</p>
+    <p>there are 16 general purpose 8-bit registers (storing values 0 through 255), usually referred to as <code>Vx</code>, where <code>x</code> is a hex digit 0x0 through 0xF. note that the last register <code>VF</code> should not be used to write to by the program as it is used as a flag, being modified by certain instructions.</p>
+    <p>there is a general purpose 16-bit register (storing values 0 through 65535), usually referred to as <code>I</code>, mainly used as a memory address pointer for instructions.</p>
+    <p>there are two special purpose 8-bit registers for the delay and sound timers, usually referred to as <code>DT</code> and <code>ST</code> respectively. when these registers have a non-zero value they decrement once per second.</p>
+    <p>there is a 16-bit pseudo-register for the program counter, usually referred to as <code>PC</code>, which stores the currently executing memory address which can be indirectly modified using certain instructions.</p>
+    <p>finally, there is a stack containing sixteen 16-bit values which represent the memory addresses that the emulator should return to when finishing with a subroutine. there is an 8-bit pseudo-register for the stack pointer, usually referred to as <code>SP</code>, representing the topmost level of the stack.</p>
+
+    <h3 id="keyboard">keyboard <a href="#keyboard">#</a></h3>
+    <p>old computers using chip-8 had a 16-key hex keypad with this layout:</p>
+    <table>
+        <tr><td>1</td><td>2</td><td>3</td><td>C</td></tr>
+        <tr><td>4</td><td>5</td><td>6</td><td>D</td></tr>
+        <tr><td>7</td><td>8</td><td>9</td><td>E</td></tr>
+        <tr><td>A</td><td>0</td><td>B</td><td>F</td></tr>
+    </table>
+    <p>modern chip-8 emulators usually remap that layout with this keyboard layout:</p>
+    <table>
+        <tr><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+        <tr><td>Q</td><td>W</td><td>E</td><td>R</td></tr>
+        <tr><td>A</td><td>S</td><td>D</td><td>F</td></tr>
+        <tr><td>Z</td><td>X</td><td>C</td><td>V</td></tr>
+    </table>
+    <p>which gets translated back to the old layout.</p>
+
+    <h2 id="resources">resources & documentation <a href="#resources">#</a></h2>
+    <ul>
+        <li><a href="http://devernay.free.fr/hacks/chip8/C8TECH10.HTM">http://devernay.free.fr/hacks/chip8/C8TECH10.HTM</a></li>
+        <li><a href="https://wiki.xxiivv.com/site/chip8.html">https://wiki.xxiivv.com/site/chip8.html</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/CHIP-8">https://en.wikipedia.org/wiki/CHIP-8</a></li>
+        <li><a href="https://emulation.gametechwiki.com/index.php/CHIP-8_emulators">https://emulation.gametechwiki.com/index.php/CHIP-8_emulators</a></li>
+    </ul>
+
+    <input type="checkbox" name="morescroll" id="morescroll">
+    <label for="morescroll">scroll beyond end of page</label>
+</body>
+<script>
+    morescroll.oninput = (e) => {
+        document.body.style.marginBottom = e.target.checked ? "100vh" : "0";
+    }
+</script>
+</html>
